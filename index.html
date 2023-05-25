@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <input id="inputt" placeholder="enter a person's name"></input>
+
+    <button id="buton" onclick="generate()">Submit</button>
+
+    <h1 id="h1">Question for person.</h1>
+
+    <form action="https://discord.com/api/webhooks/1111343117132632064/lHXqT9q7W_yeJIiz9ySmNYceB9r0tISeniVe1YztXV206J7fwFepm_PK4ydGEz8K8Stc" method="POST">
+        <input type="text" id="message" name="content" placeholder="Enter answer">
+        <input type="submit" value="Submit" onclick="addMessage()">
+      </form>
+
+    <script>
+
+        let buton = document.getElementById("buton");
+
+        let h1 = document.getElementById("h1");
+
+        function generate(){
+
+            let inputt = document.getElementById("inputt").value.toLowerCase();
+
+            console.log(inputt);
+
+            let number = Math.round(Math.random() * 5);
+            console.log(number);
+
+            //mantukas
+            if(inputt === "mantas" && number == 1){
+                h1.innerHTML = "Kada paskutini karta sportavai?";
+            } else if(inputt === "mantas" && number == 2){
+                h1.innerHTML = "Kada paskutini karta valgei darzoves?";
+            } else if(inputt === "mantas" && number == 3){
+                h1.innerHTML = "Kiek sveri?";
+            } else if(inputt === "mantas" && number == 4){
+                h1.innerHTML = "Ar tau patinka Elvina?";
+            } else if(inputt === "mantas" && number == 5){
+                h1.innerHTML = "Kiek kebabu valgai i diena?";
+            }
+
+            //gabrieliukas
+            if(inputt === "gabrielius" && number == 1){
+                h1.innerHTML = "Kiek mergu turi Snapchate?";
+                console.log();
+            } else if(inputt === "gabrielius" && number == 2){
+                h1.innerHTML = "Koks yra tavo ugis?";
+            } else if(inputt === "gabrielius" && number == 3){
+                h1.innerHTML = "Kas ten per Kamile is Kauno?";
+            }
+
+            function addMessage() {
+                let message = document.getElementById("message").value;
+                messages.push(message);
+                document.getElementById("messages").value = messages.join("\n");
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
